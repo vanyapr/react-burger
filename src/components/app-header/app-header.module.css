@@ -1,0 +1,39 @@
+.container {
+  grid-template-columns: 1fr 290px 1fr;
+  display: grid;
+  max-width: 1125px;
+  margin: 0 auto;
+}
+
+.logo {
+  align-self: center;
+}
+
+.list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.right {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-direction: row-reverse;
+}
+
+.list-item-pull-left {
+  align-self: flex-end;
+}
+
+.link {
+  display: flex;
+  text-decoration: none;
+  color: #8585AD;
+}
+
+.link:hover {
+  color: #F2F2F3;
+}
