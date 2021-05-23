@@ -1,7 +1,7 @@
 .container {
   grid-template-columns: 1fr 290px 1fr;
   display: grid;
-  max-width: 1125px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -32,6 +32,7 @@
   display: flex;
   text-decoration: none;
   color: #8585AD;
+  transition: color linear .2s;
 }
 
 .link:hover {

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from './app-header.module.css';
-import {Logo, BurgerIcon, ListIcon, ProfileIcon } from '@ya.praktikum/react-developer-burger-ui-components';
+import { Logo, BurgerIcon, ListIcon, ProfileIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 
 class AppHeader extends React.Component {
   render () {
@@ -8,7 +8,7 @@ class AppHeader extends React.Component {
       <header className={`pt-2 pb-2 ${styles.container}`}>
           <nav>
             <ul className={styles.list}>
-              <li>
+              <li className="mr-2">
                 <a className={`pt-4 pb-4 pl-5 pr-5 ${styles.link}`} href="/" title="Конструктор" >
                   <BurgerIcon type="secondary" />
                   <span className="pl-2 text text_type_main-default">Конструктор</span>
