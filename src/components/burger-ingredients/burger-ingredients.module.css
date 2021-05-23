@@ -1,0 +1,23 @@
+.aside {
+
+}
+
+.elements {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.scrollable {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: calc(100vh - 460px - 52px);
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.checkout {
+  display: flex;
+  flex-direction: row-reverse;
+}

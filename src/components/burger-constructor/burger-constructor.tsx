@@ -18,7 +18,7 @@ class BurgerConstructor extends React.Component <any, any>{
 
   render () {
     return (
-      <div className={`mr-10 ${styles.constructor}`}>
+      <article className={`mr-10 ${styles.constructor}`}>
         <header className={styles.title}>
           <h1 className="text text_type_main-large mt-10">Соберите бургер</h1>
           <div className={`mt-5 ${styles.tabs}`}>
@@ -35,7 +35,7 @@ class BurgerConstructor extends React.Component <any, any>{
         </header>
         <section className={styles.scrollable}>
           {/* Разделил на секции на будущее */}
-          <div>
+          <section>
             <h2 className={`mt-10 text text_type_main-medium ${styles.subtitle}`}>Булки</h2>
             <ul className={`pt-6 pr-4 pl-4 ${styles.list}`}>
               {/* Один элемент */}
@@ -70,10 +70,10 @@ class BurgerConstructor extends React.Component <any, any>{
               </li>
               {/* / Один элемент*/}
             </ul>
-          </div>
+          </section>
           {/* Разделил на секции на будущее */}
           {/* Разделил на секции на будущее */}
-          <div>
+          <section>
             <h2 className={`mt-10 text text_type_main-medium ${styles.subtitle}`}>Соусы</h2>
             <ul className={`pt-6 pr-4 pl-4 ${styles.list}`}>
               {/* Один элемент */}
@@ -107,11 +107,11 @@ class BurgerConstructor extends React.Component <any, any>{
               </li>
               {/* / Один элемент*/}
             </ul>
-          </div>
+          </section>
           {/* Разделил на секции на будущее */}
         </section>
 
-      </div>
+      </article>
     )
   }
 }
