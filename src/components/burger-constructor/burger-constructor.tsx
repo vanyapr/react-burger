@@ -16,6 +16,10 @@ class BurgerConstructor extends React.Component <any, any>{
     });
   }
 
+  // Отсортировать массив данных по категориям
+  // Записать данные по категориям в стейт
+
+
   render () {
     return (
       <article className={`mr-10 ${styles.constructor}`}>

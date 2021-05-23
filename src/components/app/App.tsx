@@ -5,6 +5,9 @@ import BurgerConstructor from "../burger-constructor/burger-constructor";
 import styles from './app.module.css';
 
 function App() {
+  // Получили данные из истончика данных для передачи в компоненты
+
+
   return (
     <>
       <AppHeader />
