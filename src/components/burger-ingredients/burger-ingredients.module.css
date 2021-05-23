@@ -16,6 +16,9 @@
   min-height: 170px;
   overflow-x: hidden;
   overflow-y: visible;
+  /* Firefox */
+  scrollbar-color: #8585AD;
+  scrollbar-width: 8px;
 }
 
 .checkout {

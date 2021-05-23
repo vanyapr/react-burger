@@ -1,5 +1,6 @@
 .element {
   position: relative;
+  padding-right: 8px;
 }
 
 .drag {
