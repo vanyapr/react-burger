@@ -11,7 +11,7 @@ const ConstructorItem = ({name, price, image, openDetails}) => {
         <span className="mr-2">{price}</span>
         <CurrencyIcon type="secondary"/>
       </p>
-      <img className="ml-4 mr-4" width='240' height='120' src={image} alt={name} onClick={openDetails}/>
+      <img className={`ml-4 mr-4 ${styles.image}`} width='240' height='120' src={image} alt={name} onClick={openDetails}/>
       <p className={`text text_type_digits-default ${styles.count}`}>1</p>
     </li>
   )
