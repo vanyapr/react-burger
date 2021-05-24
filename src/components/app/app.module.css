@@ -5,3 +5,7 @@
   padding: 0 25px 52px;
   box-sizing: border-box;
 }
+
+.wrapper {
+  position: relative;
+}

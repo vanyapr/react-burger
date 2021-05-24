@@ -4,7 +4,11 @@ import { Button, CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-co
 import DraggableIngredient from "../draggable-ingredient/draggable-ingredient";
 import LockedIngredient from "../locked-ingredient/locked-ingredient";
 
-class BurgerIngredients extends React.Component {
+class BurgerIngredients extends React.Component <any, any> {
+  constructor(props: any) {
+    super(props);
+  }
+
   render () {
     return (
       <aside className={`pl-4 pr-4 ${styles.aside}`}>
@@ -60,7 +64,7 @@ class BurgerIngredients extends React.Component {
           />
         </section>
         <section className={`pt-10 ${styles.checkout}`}>
-          <Button type="primary" size="large">
+          <Button type="primary" size="large" onClick={this.props.openPopup}>
             Оформить заказ
           </Button>
           <p className='mr-10'>

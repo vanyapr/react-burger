@@ -1,0 +1,19 @@
+.title {
+  text-align: left;
+}
+
+.chemistry {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 0;
+}
+
+.name {
+  margin: 0;
+}
+
+.value {
+  margin: 8px 0 0;
+}

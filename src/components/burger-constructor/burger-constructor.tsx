@@ -79,11 +79,11 @@ class BurgerConstructor extends React.Component <any, any>{
           <section>
             <h2 className={`mt-10 text text_type_main-medium ${styles.subtitle}`}>Булки</h2>
             <ul className={`pt-6 pr-4 pl-4 ${styles.list}`}>
-              {Array.from(this.state.breads).map((item: any) => (
+              {Array.from(this.state.breads).map((item: any, index) => (
                 <ConstructorItem
-                  name={item.name}
-                  price={item.price}
-                  image={item.image}
+                  key={index}
+                  {...item}
+                  openDetails={this.props.openDetails}
                 />
               ))}
             </ul>
@@ -91,11 +91,11 @@ class BurgerConstructor extends React.Component <any, any>{
           <section>
             <h2 className={`mt-10 text text_type_main-medium ${styles.subtitle}`}>Соусы</h2>
             <ul className={`pt-6 pr-4 pl-4 ${styles.list}`}>
-              {Array.from(this.state.sauces).map((item: any) => (
+              {Array.from(this.state.sauces).map((item: any, index) => (
                 <ConstructorItem
-                  name={item.name}
-                  price={item.price}
-                  image={item.image}
+                  key={index}
+                  {...item}
+                  openDetails={this.props.openDetails}
                 />
               ))}
             </ul>
@@ -103,11 +103,11 @@ class BurgerConstructor extends React.Component <any, any>{
           <section>
             <h2 className={`mt-10 text text_type_main-medium ${styles.subtitle}`}>Начинки</h2>
             <ul className={`pt-6 pr-4 pl-4 ${styles.list}`}>
-              {Array.from(this.state.meats).map((item: any) => (
+              {Array.from(this.state.meats).map((item: any, index) => (
                 <ConstructorItem
-                  name={item.name}
-                  price={item.price}
-                  image={item.image}
+                  key={index}
+                  {...item}
+                  openDetails={this.props.openDetails}
                 />
               ))}
             </ul>
