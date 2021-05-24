@@ -1,6 +1,6 @@
 import React from "react";
 import styles from './burger-ingredients.module.css';
-import { ConstructorElement, Button, CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
+import { Button, CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import DraggableIngredient from "../draggable-ingredient/draggable-ingredient";
 import LockedIngredient from "../locked-ingredient/locked-ingredient";
 
@@ -17,43 +17,36 @@ class BurgerIngredients extends React.Component {
           />
           <div className={styles.scrollable}>
             <DraggableIngredient
-              isLocked={false}
               text="Краторная булка N-200i (верх)"
               price={200}
               thumbnail={`https://code.s3.yandex.net/react/code/bun-02.png`}
             />
             <DraggableIngredient
-              isLocked={false}
               text="Краторная булка N-200i (верх)"
               price={200}
               thumbnail={`https://code.s3.yandex.net/react/code/bun-02.png`}
             />
             <DraggableIngredient
-              isLocked={false}
               text="Краторная булка N-200i (верх)"
               price={200}
               thumbnail={`https://code.s3.yandex.net/react/code/bun-02.png`}
             />
             <DraggableIngredient
-              isLocked={false}
               text="Краторная булка N-200i (верх)"
               price={200}
               thumbnail={`https://code.s3.yandex.net/react/code/bun-02.png`}
             />
             <DraggableIngredient
-              isLocked={false}
               text="Краторная булка N-200i (верх)"
               price={200}
               thumbnail={`https://code.s3.yandex.net/react/code/bun-02.png`}
             />
             <DraggableIngredient
-              isLocked={false}
               text="Краторная булка N-200i (верх)"
               price={200}
               thumbnail={`https://code.s3.yandex.net/react/code/bun-02.png`}
             />
             <DraggableIngredient
-              isLocked={false}
               text="Краторная булка N-200i (верх)"
               price={200}
               thumbnail={`https://code.s3.yandex.net/react/code/bun-02.png`}

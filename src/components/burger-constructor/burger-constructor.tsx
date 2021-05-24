@@ -1,24 +1,61 @@
 import React from "react";
 import styles from './burger-constructor.module.css';
 import { Tab, CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
+import ConstructorItem from "../constructor-item/constructor-item";
 
 class BurgerConstructor extends React.Component <any, any>{
   constructor(props: any) {
     super(props);
     this.state = {
-      current: 'one',
+      currentTab: 'one',
+      breads: false,
+      meats: false,
+      sauces: false,
     }
   }
 
-  setCurrent = (event: any) => {
+  setCurrentTab = (event: any) => {
     this.setState({
-      current: event,
+      currentTab: event,
     });
   }
 
   // Отсортировать массив данных по категориям
-  // Записать данные по категориям в стейт
+  getBreads = () => {
+    const breads = this.props.data.filter((item: { type: string }) => {
+      return item.type === 'bun';
+    });
 
+    return breads;
+  }
+
+  getMeats = () => {
+    const meats = this.props.data.filter((item: { type: string }) => {
+      return item.type === 'main';
+    });
+
+    return meats;
+  }
+
+  getSauces = () => {
+    const sauces = this.props.data.filter((item: { type: string }) => {
+      return item.type === 'sauce';
+    });
+
+    return sauces;
+  }
+
+  // Записать данные по категориям в стейт
+  componentDidMount() {
+    this.setState({
+      breads: this.getBreads(),
+      meats: this.getMeats(),
+      sauces: this.getSauces(),
+    }, () => {
+      console.log(this.state);
+    });
+
+  }
 
   render () {
     return (
@@ -26,13 +63,13 @@ class BurgerConstructor extends React.Component <any, any>{
         <header className={styles.title}>
           <h1 className="text text_type_main-large mt-10">Соберите бургер</h1>
           <div className={`mt-5 ${styles.tabs}`}>
-            <Tab value="one" active={this.state.current === 'one'} onClick={this.setCurrent}>
+            <Tab value="one" active={this.state.currentTab === 'one'} onClick={this.setCurrentTab}>
               Булки
             </Tab>
-            <Tab value="two" active={this.state.current === 'two'} onClick={this.setCurrent}>
+            <Tab value="two" active={this.state.currentTab === 'two'} onClick={this.setCurrentTab}>
               Соусы
             </Tab>
-            <Tab value="three" active={this.state.current === 'three'} onClick={this.setCurrent}>
+            <Tab value="three" active={this.state.currentTab === 'three'} onClick={this.setCurrentTab}>
               Начинки
             </Tab>
           </div>
@@ -42,74 +79,37 @@ class BurgerConstructor extends React.Component <any, any>{
           <section>
             <h2 className={`mt-10 text text_type_main-medium ${styles.subtitle}`}>Булки</h2>
             <ul className={`pt-6 pr-4 pl-4 ${styles.list}`}>
-              {/* Один элемент */}
-              <li className={styles.item}>
-                <h3 className={`mt-1 text text_type_main-default ${styles.name}`}>Флюоресцентная булка R2-D3</h3>
-                <p className={`mt-1 text text_type_digits-default ${styles.description}`}>
-                  <span className="mr-2">240</span>
-                  <CurrencyIcon type="secondary"/>
-                </p>
-                <img className="ml-4 mr-4" width='240' height='120' src="https://via.placeholder.com/240x120.png" alt="Тайтл"/>
-                <p className={`text text_type_digits-default ${styles.count}`}>1</p>
-              </li>
-              {/* / Один элемент*/}
-              {/* Один элемент */}
-              <li className={styles.item}>
-                <h3 className={`mt-1 text text_type_main-default ${styles.name}`}>Флюоресцентная булка R2-D3</h3>
-                <p className={`mt-1 text text_type_digits-default ${styles.description}`}>
-                  <span className="mr-2">240</span>
-                  <CurrencyIcon type="secondary"/>
-                </p>
-                <img className="ml-4 mr-4" width='240' height='120' src="https://via.placeholder.com/240x120.png" alt="Тайтл"/>
-              </li>
-              {/* / Один элемент*/}
-              {/* Один элемент */}
-              <li className={styles.item}>
-                <h3 className={`mt-1 text text_type_main-default ${styles.name}`}>Флюоресцентная булка R2-D3</h3>
-                <p className={`mt-1 text text_type_digits-default ${styles.description}`}>
-                  <span className="mr-2">240</span>
-                  <CurrencyIcon type="secondary"/>
-                </p>
-                <img className="ml-4 mr-4" width='240' height='120' src="https://via.placeholder.com/240x120.png" alt="Тайтл"/>
-              </li>
-              {/* / Один элемент*/}
+              {Array.from(this.state.breads).map((item: any) => (
+                <ConstructorItem
+                  name={item.name}
+                  price={item.price}
+                  image={item.image}
+                />
+              ))}
             </ul>
           </section>
-          {/* Разделил на секции на будущее */}
-          {/* Разделил на секции на будущее */}
           <section>
             <h2 className={`mt-10 text text_type_main-medium ${styles.subtitle}`}>Соусы</h2>
             <ul className={`pt-6 pr-4 pl-4 ${styles.list}`}>
-              {/* Один элемент */}
-              <li className={styles.item}>
-                <h3 className={`mt-1 text text_type_main-default ${styles.name}`}>Соус Spicy-X</h3>
-                <p className={`mt-1 text text_type_digits-default ${styles.description}`}>
-                  <span className="mr-2">240</span>
-                  <CurrencyIcon type="secondary"/>
-                </p>
-                <img className="ml-4 mr-4" width='240' height='120' src="https://via.placeholder.com/240x120.png" alt="Тайтл"/>
-              </li>
-              {/* / Один элемент*/}
-              {/* Один элемент */}
-              <li className={styles.item}>
-                <h3 className={`mt-1 text text_type_main-default ${styles.name}`}>Соус фирменный Space Sauce</h3>
-                <p className={`mt-1 text text_type_digits-default ${styles.description}`}>
-                  <span className="mr-2">240</span>
-                  <CurrencyIcon type="secondary"/>
-                </p>
-                <img className="ml-4 mr-4" width='240' height='120' src="https://via.placeholder.com/240x120.png" alt="Тайтл"/>
-              </li>
-              {/* / Один элемент*/}
-              {/* Один элемент */}
-              <li className={styles.item}>
-                <h3 className={`mt-1 text text_type_main-default ${styles.name}`}>Флюоресцентная булка R2-D3</h3>
-                <p className={`mt-1 text text_type_digits-default ${styles.description}`}>
-                  <span className="mr-2">240</span>
-                  <CurrencyIcon type="secondary"/>
-                </p>
-                <img className="ml-4 mr-4" width='240' height='120' src="https://via.placeholder.com/240x120.png" alt="Тайтл"/>
-              </li>
-              {/* / Один элемент*/}
+              {Array.from(this.state.sauces).map((item: any) => (
+                <ConstructorItem
+                  name={item.name}
+                  price={item.price}
+                  image={item.image}
+                />
+              ))}
+            </ul>
+          </section>
+          <section>
+            <h2 className={`mt-10 text text_type_main-medium ${styles.subtitle}`}>Начинки</h2>
+            <ul className={`pt-6 pr-4 pl-4 ${styles.list}`}>
+              {Array.from(this.state.meats).map((item: any) => (
+                <ConstructorItem
+                  name={item.name}
+                  price={item.price}
+                  image={item.image}
+                />
+              ))}
             </ul>
           </section>
           {/* Разделил на секции на будущее */}
