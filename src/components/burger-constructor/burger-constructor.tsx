@@ -1,9 +1,10 @@
 import React from "react";
 import styles from './burger-constructor.module.css';
-import { Tab, CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
+import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 import ConstructorItem from "../constructor-item/constructor-item";
+import PropTypes from 'prop-types';
 
-class BurgerConstructor extends React.Component <any, any>{
+class BurgerConstructor extends React.Component <any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -14,13 +15,14 @@ class BurgerConstructor extends React.Component <any, any>{
     }
   }
 
+  // Устанавливаем текущую активную вкладку
   setCurrentTab = (event: any) => {
     this.setState({
       currentTab: event,
     });
   }
 
-  // Отсортировать массив данных по категориям
+  // Получаем список булок
   getBreads = () => {
     const breads = this.props.data.filter((item: { type: string }) => {
       return item.type === 'bun';
@@ -29,6 +31,7 @@ class BurgerConstructor extends React.Component <any, any>{
     return breads;
   }
 
+  // Получаем список "мяса"
   getMeats = () => {
     const meats = this.props.data.filter((item: { type: string }) => {
       return item.type === 'main';
@@ -37,6 +40,7 @@ class BurgerConstructor extends React.Component <any, any>{
     return meats;
   }
 
+  // Получаем список соусов
   getSauces = () => {
     const sauces = this.props.data.filter((item: { type: string }) => {
       return item.type === 'sauce';
@@ -45,16 +49,16 @@ class BurgerConstructor extends React.Component <any, any>{
     return sauces;
   }
 
-  // Записать данные по категориям в стейт
   componentDidMount() {
+    // Записываем данные по ингредиентам в стейт
     this.setState({
       breads: this.getBreads(),
       meats: this.getMeats(),
       sauces: this.getSauces(),
     }, () => {
-      console.log(this.state);
+      // На всякий случай проверяем данные в консоли
+      // console.log(this.state);
     });
-
   }
 
   render () {
@@ -112,12 +116,32 @@ class BurgerConstructor extends React.Component <any, any>{
               ))}
             </ul>
           </section>
-          {/* Разделил на секции на будущее */}
+          {/* / Разделил на секции на будущее */}
         </section>
-
       </article>
     )
   }
+}
+
+// @ts-ignore
+// Поскольку я не умею пользоваться тайпскприптом, я просто игнорирую уведомление
+// Я понятия не имею что оно значит
+BurgerConstructor.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    proteins: PropTypes.number.isRequired,
+    fat: PropTypes.number.isRequired,
+    carbohydrates: PropTypes.number.isRequired,
+    calories: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
+    image_mobile: PropTypes.string.isRequired,
+    image_large: PropTypes.string.isRequired,
+    __v: PropTypes.number,
+  })),
+  openDetails: PropTypes.func,
 }
 
 export default BurgerConstructor;

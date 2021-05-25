@@ -3,6 +3,7 @@ import styles from './burger-ingredients.module.css';
 import { Button, CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import DraggableIngredient from "../draggable-ingredient/draggable-ingredient";
 import LockedIngredient from "../locked-ingredient/locked-ingredient";
+import PropTypes from "prop-types";
 
 class BurgerIngredients extends React.Component <any, any> {
   constructor(props: any) {
@@ -75,6 +76,13 @@ class BurgerIngredients extends React.Component <any, any> {
       </aside>
     )
   }
+}
+
+// @ts-ignore
+// Поскольку я не умею пользоваться тайпскприптом, я просто игнорирую уведомление
+// Я понятия не имею что оно значит
+BurgerIngredients.propTypes = {
+  openDetails: PropTypes.func,
 }
 
 export default BurgerIngredients;

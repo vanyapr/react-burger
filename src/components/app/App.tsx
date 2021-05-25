@@ -10,7 +10,7 @@ import data from "../../utils/data";
 function App() {
   const [state, setState] = React.useState({
     isAcceptedPopupOpened: false,
-    isDetailsPopupOpened: true,
+    isDetailsPopupOpened: false,
   })
   // Получили данные из истончика данных для передачи в компоненты
 
