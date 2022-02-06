@@ -1,0 +1,44 @@
+.constructor {
+  /*border: 1px solid mediumpurple;*/
+  /*box-sizing: border-box;*/
+  width: 600px;
+  position: relative;
+
+}
+
+.title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.scrollable {
+  /*border: 1px solid yellow;*/
+  /*box-sizing: border-box;*/
+  margin-top: 155px;
+  max-height: calc(100vh - 279px);
+  min-height: 170px;
+  overflow-x: hidden;
+  overflow-y: visible;
+  /* Firefox */
+  scrollbar-color: #8585AD;
+  scrollbar-width: 8px;
+}
+
+.tabs {
+  display: flex;
+}
+
+.subtitle {
+  margin-bottom: 0;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 24px;
+  grid-row-gap: 32px;
+}

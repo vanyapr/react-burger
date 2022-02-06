@@ -1,0 +1,24 @@
+.element {
+  position: relative;
+  padding-right: 8px;
+}
+
+.drag {
+  cursor: move;
+  display: block;
+  content: '';
+  background-color: transparent;
+  border: none;
+  background-image: url('../../images/draggable.svg');
+  background-repeat: no-repeat;
+  -webkit-background-size: 13px 18.31px;
+  background-size: 13px 18.31px;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 0;
+  position: absolute;
+  text-indent: -9000px;
+}

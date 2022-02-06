@@ -1,0 +1,27 @@
+.aside {
+
+}
+
+.elements {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.scrollable {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: calc(100vh - 460px - 52px);
+  min-height: 170px;
+  overflow-x: hidden;
+  overflow-y: visible;
+  /* Firefox */
+  scrollbar-color: #8585AD;
+  scrollbar-width: 8px;
+}
+
+.checkout {
+  display: flex;
+  flex-direction: row-reverse;
+}

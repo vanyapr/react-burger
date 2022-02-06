@@ -1,0 +1,29 @@
+.modal {
+  background: #1C1C21;
+  border: 1px solid rgba(76, 76, 255, 0.2);
+  box-sizing: border-box;
+  box-shadow: 0 24px 32px rgba(0, 0, 0, 0.04), 0 16px 24px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.04), 0 0 1px rgba(0, 0, 0, 0.04);
+  border-radius: 40px;
+  width: 720px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 60px;
+  right: 40px;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  background-image: url('../../images/icon-close.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  text-indent: -9000px;
+  padding: 0;
+  cursor: pointer;
+}
